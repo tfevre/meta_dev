@@ -1,0 +1,22 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    padding: 10px;
+    background-color: #0A1023;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav > img {
+    width: 100%;
+    max-width: 300px;
+}
