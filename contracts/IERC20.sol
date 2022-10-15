@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@HanySah 
-OpenZeppelin
-/
-openzeppelin-contracts
-Public
-Code
-Issues
-118
-Pull requests
-35
-Actions
-Security
-11
-Insights
-openzeppelin-contracts/contracts/token/ERC20/IERC20.sol
-@Amxx
-Amxx Release v4.6 (#3358)
-…
-Latest commit a035b23 on 27 Apr
- History
- 9 contributors
-@frangio@nventuro@Amxx@Miraj98@MicahZoltu@fulldecent@DanielVF@andrekorol@CJ42
-82 lines (73 sloc)  2.7 KB
-
 // SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)
 
@@ -111,18 +80,3 @@ interface IERC20 {
         uint256 amount
     ) external returns (bool);
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-openzeppelin-contracts/IERC20.sol at master · OpenZeppelin/openzeppelin-contracts
