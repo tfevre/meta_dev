@@ -11,6 +11,7 @@ body {
     padding: 10px;
     background-color: #0A1023;
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -19,4 +20,88 @@ body {
 .nav > img {
     width: 100%;
     max-width: 300px;
+}
+
+.section {
+    padding: 20px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    padding: 10px 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    background-color: #3498db;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    outline: none;
+    text-decoration: none;
+    display: block;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+.box {
+    padding: 20px 15px;
+    margin: 20px 10px;
+    border-radius: 5px;
+    border: 1px solid #3498db;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box.small {
+    max-width: 300px;
+}
+
+.alertMsg {
+    padding: 10px 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
+    text-align: center;
+    display: block;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+}
+
+.subtitle {
+    padding: 10px 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    height: 40px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: black;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 10px 0;
+    max-width: 400px;
 }

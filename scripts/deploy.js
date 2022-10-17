@@ -13,9 +13,9 @@ async function main() {
   const Contract = await hre.ethers.getContractFactory("METADEV");
   const contract = await Contract.deploy(contractName, contractSymbol);
 
-  await contract.deployed();
+  const deployed = await contract.deployed();
 
-  console.log("Contract deployed");
+  console.log("Smart contact deployed to : " + deployed.address);
 };
 
 // We recommend this pattern to be able to use async/await everywhere
