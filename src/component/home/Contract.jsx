@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import { smartContract } from '../../smartContract/smartContract';
 import { useState } from "react";
 
-const Contract = ({provider}) => {
+const Contract = ({signer}) => {
     const [state, setState] = useState({});
 
     const submit = async (e) => {
@@ -12,20 +12,30 @@ const Contract = ({provider}) => {
         const contractAddress = target.contractAddress.value;
         if (isAddress(contractAddress)) {
             try {
-                const ct = new ethers.Contract(contractAddress, smartContract.abi, provider);
+                const ct = new ethers.Contract(contractAddress, smartContract.abi, signer);
                 const name = await ct.name();
                 const symbol = await ct.symbol();
                 const totalSupplyBn = await ct.totalSupply();
                 const totalSupply = ethers.utils.formatEther(totalSupplyBn);
-                setState({contractName: name, contractSymbol: symbol, totalSupply});
+                setState({contractName: name, contractSymbol: symbol, contract: ct, totalSupply});
             } catch (error) {
                 console.log(error);  
             };
         };
     };
 
+    const MakeTransfer = async() => {
+        try {
+            state.contract.transfer(await signer.getAddress(), 10);
+        } catch (error) {
+            console.log(error);  
+        };
+        
+    }
+
     return (
         <>
+        <button onClick={MakeTransfer} className="button">Transfer</button>
             <div className="section">
                 <form className="box" onSubmit={submit}>
                     <h3 className="subtitle">Renseigner l'adresse de votre Smart Contract :</h3>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ethers } from "ethers";
 import ProviderData from "./ProvdiderData";
 import Contract from "./Contract";
+import TransferBTN from "./TransferBTN";
 
 const Home = () => {
     const [state, setState] = useState({});
@@ -15,7 +16,7 @@ const Home = () => {
             const network = await provider.getNetwork();
             const networkName = network.name;
             const chainId = network.chainId;
-            setState({providerData: {networkName, chainId, signerAddress}, provider});
+            setState({providerData: {networkName, chainId, signerAddress}, provider, signer});
         } catch (error) {
           console.log(error);
           setState({error: "une erreur est survenue"});
@@ -35,7 +36,7 @@ const Home = () => {
             {state.provider && 
                 <>
                     <ProviderData providerData={state.providerData} />
-                    <Contract provider={state.provider} />
+                    <Contract provider={state.provider} signer={state.signer}/>
                 </>
             }
         </>
